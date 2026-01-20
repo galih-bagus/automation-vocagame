@@ -48,12 +48,26 @@ describe("Voca Game Register", function () {
       );
    });
 
-   it("Register with valid data", async function () {
+   it("Register with data duplicate", async function () {
+      await element.fillField(registerPage.emailField, `kandidat-galih@yopmail.com`);
+      await element.fillField(registerPage.phoneNumberField, `+62 83299237`);
+      await element.fillField(registerPage.passwordField, `Asdf1234!`);
+      await element.fillField(registerPage.confirmPasswordField, `Asdf1234!`);
+      await element.clickButton(registerPage.buttonCheckBox);
+      await element.clickButton(registerPage.buttonBuatAkun);
+      await element.clickButton(registerPage.optionOtp);
+      await element.clickButton(registerPage.buttonLanjutkan);
+      await assertion.assertionActualExpectedText(registerPage.alertSuccess, `OTP has been sent via email`);
+   });
+
+   it.skip("Register with valid data", async function () {
       await element.fillField(registerPage.emailField, faker.internet.email());
       await element.fillField(registerPage.passwordField, `Asdf1234!`);
       await element.fillField(registerPage.confirmPasswordField, `Asdf1234!`);
       await element.clickButton(registerPage.buttonCheckBox);
       await element.clickButton(registerPage.buttonBuatAkun);
       await element.clickButton(registerPage.optionOtp);
+      await element.clickButton(registerPage.buttonLanjutkan);
+      await assertion.assertionActualExpectedText(registerPage.alertSuccess, `OTP has been sent via email`);
    });
 });

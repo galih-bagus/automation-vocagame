@@ -14,5 +14,5 @@ export const errorPasswordConfirmation = `//p[contains(text(),'Konfirmasi kata s
 export const buttonCheckBox = `//button[@role='checkbox']`;
 export const buttonBuatAkun = `//button[contains(text(),'Buat Akun')]`;
 export const optionOtp = `//div[@class='w-full']//ul//li`;
-export const buttonLanjutkan = `//button[contains(text(),'Lanjutkan')]`;
-export const alertSuccess = `//div[contains(text(),Kami mendeteksi aktivitas yang tidak biasa di akun Anda. Demi keamanan, akses sementara dibatasi.)]`;
+export const buttonLanjutkan = `(//button[contains(text(),'Lanjutkan')])[2]`;
+export const alertSuccess = `//div[contains(text(),'OTP has been sent via email')]`;
