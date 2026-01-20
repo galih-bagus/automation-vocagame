@@ -1,0 +1,40 @@
+{
+   "name": "template-selenium",
+   "version": "1.0.0",
+   "description": "Template selenium using javascript",
+   "main": "index.js",
+   "scripts": {
+      "generate": "mocha \"src/test/**/*.test.js\" -r dotenv/config --timeout 70000 --reporter allure-mocha",
+      "start": "allure open allure-report --port 8080",
+      "report": "allure generate allure-results --clean",
+      "test": "mocha -r dotenv/config --no-timeouts"
+   },
+   "repository": {
+      "type": "git",
+      "url": "git+https://github.com/galih-bagus/template-selenium.git"
+   },
+   "keywords": [
+      "automation",
+      "testing",
+      "seleniumjs",
+      "mocha",
+      "chai",
+      "allure-report"
+   ],
+   "author": "galih-bagus",
+   "license": "ISC",
+   "bugs": {
+      "url": "https://github.com/galih-bagus/template-selenium/issues"
+   },
+   "homepage": "https://github.com/galih-bagus/template-selenium#readme",
+   "dependencies": {
+      "@faker-js/faker": "^10.2.0",
+      "allure-commandline": "^2.32.2",
+      "allure-mocha": "^3.1.0",
+      "chai": "^5.1.2",
+      "dotenv": "^16.4.7",
+      "mocha": "^11.1.0",
+      "prettier": "^3.8.0",
+      "selenium-webdriver": "^4.28.1"
+   }
+}

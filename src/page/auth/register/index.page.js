@@ -1,0 +1,11 @@
+export const buttonMasuk = `//button[contains(text(),'Masuk')]`;
+export const buttonDaftarSekarang = `//a//span[contains(text(),'Daftar Sekarang')]`;
+export const titleAuthPage = `//p[@class='mt-7 text-2xl font-semibold']`;
+export const textRegisterPage = `//p[@class='mt-1 text-sm text-gray-500']`;
+export const firstNameField = `//input[@name='first_name']`;
+export const lastNameField = `//input[@name='last_name']`;
+export const phoneNumberField = `//input[@name='phone_number']`;
+export const emailField = `//input[@name='email']`;
+export const errorEmail = `//p[contains(text(),'Harap masukkan alamat email yang valid.')]`;
+export const passwordField = `//input[@name='password']`;
+export const confirmPasswordField = `//input[@name='confirm_password']`;
