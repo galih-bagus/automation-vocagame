@@ -4,6 +4,7 @@ const { getDriver } = require("./driver");
 async function fillField(selector, value) {
    const driver = getDriver();
    const ele = await driver.wait(until.elementLocated(By.xpath(selector)), 10000);
+   await ele.clear();
    await ele.sendKeys(value);
 }
 

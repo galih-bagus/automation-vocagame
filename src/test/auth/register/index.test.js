@@ -14,8 +14,8 @@ describe("Voca Game Register", function () {
 
    after(async function () {
       const driver = getDriver();
-      await driver.sleep(3000);
-      await driver.quit();
+      //   await driver.sleep(3000);
+      //   await driver.quit();
    });
 
    it("Register with invalid email", async function () {
@@ -29,5 +29,31 @@ describe("Voca Game Register", function () {
       await element.fillField(registerPage.phoneNumberField, faker.phone.number());
       await element.fillField(registerPage.emailField, `invalid`);
       await assertion.assertionActualExpectedText(registerPage.errorEmail, `Harap masukkan alamat email yang valid.`);
+   });
+
+   it("Register with less than 6 character password", async function () {
+      await element.fillField(registerPage.passwordField, `asd`);
+      await assertion.assertionActualExpectedText(
+         registerPage.errorPassword,
+         `Kata sandi harus terdiri dari setidaknya 6 karakter.`
+      );
+   });
+
+   it("Register with different confirmation password", async function () {
+      await element.fillField(registerPage.passwordField, `Asdf1234!`);
+      await element.fillField(registerPage.confirmPasswordField, `asd`);
+      await assertion.assertionActualExpectedText(
+         registerPage.errorPasswordConfirmation,
+         `Konfirmasi kata sandi tidak cocok.`
+      );
+   });
+
+   it("Register with valid data", async function () {
+      await element.fillField(registerPage.emailField, faker.internet.email());
+      await element.fillField(registerPage.passwordField, `Asdf1234!`);
+      await element.fillField(registerPage.confirmPasswordField, `Asdf1234!`);
+      await element.clickButton(registerPage.buttonCheckBox);
+      await element.clickButton(registerPage.buttonBuatAkun);
+      await element.clickButton(registerPage.optionOtp);
    });
 });
