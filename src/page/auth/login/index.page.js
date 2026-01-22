@@ -1,0 +1,12 @@
+export const buttonMasuk = `//button[contains(text(),'Masuk')]`;
+export const identifierField = `//input[@name='identifier']`;
+export const identifierEdit = `//*[name()='svg' and contains(@class,'lucide-pencil')]`;
+export const passwordField = `//input[@name='password']`;
+export const errorIdentifierEmail = `//p[contains(text(),'Email harus berupa alamat email yang valid')]`;
+export const errorIdentifierPasswordNull = `//p[contains(text(),'Kata sandi minimal harus 6 karakter.')]`;
+export const buttonMasukAkun = `//button[contains(text(),'Masuk Akun')]`;
+export const optionOtp = `//div[@class='w-full']//ul//li`;
+export const buttonLanjutkan = `(//button[contains(text(),'Lanjutkan')])[2]`;
+export const alertErrorWrongPassword = `//div[contains(text(),'Kata sandi salah. Verifikasi dan coba lagi.')]`;
+export const alertErrorInvalidAccount = `//div[contains(text(),'Email tidak ditemukan. Harap gunakan data yang valid dan terdaftar')]`;
+export const alertSuccess = `//div[contains(text(),'ok')]`;
