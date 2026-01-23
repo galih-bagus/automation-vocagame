@@ -14,8 +14,8 @@ describe("Voca Game Register", function () {
 
    after(async function () {
       const driver = getDriver();
-      //   await driver.sleep(3000);
-      //   await driver.quit();
+      await driver.sleep(3000);
+      await driver.quit();
    });
 
    it("Register with invalid email", async function () {
@@ -60,7 +60,7 @@ describe("Voca Game Register", function () {
       await assertion.assertionActualExpectedText(registerPage.alertSuccess, `OTP has been sent via email`);
    });
 
-   it.skip("Register with valid data", async function () {
+   it("Register with valid data", async function () {
       await element.fillField(registerPage.emailField, faker.internet.email());
       await element.fillField(registerPage.passwordField, `Asdf1234!`);
       await element.fillField(registerPage.confirmPasswordField, `Asdf1234!`);
